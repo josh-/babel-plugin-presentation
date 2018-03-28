@@ -1,0 +1,15 @@
+{
+  "name": "node-calculator-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:babel": "babel-node --plugins ../babel-plugin-transform-fun-chaos index.js"
+  },
+  "author": "Josh Parnham",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "6.26.0"
+  }
+}
