@@ -21,11 +21,10 @@ What is Babel?
 
 ---
 
-<!--
-If you've ever used these Facebook technologies, like React, React Native, Jest (the JavaScript testing framework) or Flow (the genesis of the Redux statement management pattern), you will have used Babel under the covers.
+^ If you've ever used these Facebook technologies, like React, React Native, Jest (the JavaScript testing framework) or Flow (the genesis of the Redux statement management pattern), you will have used Babel under the covers.
 
-So whilst you probably will never need to write a Babel plugin, hopefully this talk can give you a better understanding of this ecosystem and how it can be used in your own projects.
--->
+^ So whilst you probably will never need to write a Babel plugin, hopefully this talk can give you a better understanding of this ecosystem and how it can be used in your own projects.
+
 
 ![inline 35%](images/React.png)![inline 35%](images/Flow.png)
 ![inline 80%](images/Jest.png)![inline 35%](images/React.png)
@@ -49,13 +48,11 @@ So whilst you probably will never need to write a Babel plugin, hopefully this t
       }
     }
 
-<!--
-The babel-preset-react-native-stage-0 is a collection of plugins (and also the `babel-preset-react-native` preset).
+^ The babel-preset-react-native-stage-0 is a collection of plugins (and also the `babel-preset-react-native` preset).
 
-`decorator-support` is a file in the package that just exports the required preset and extra plugins.
+^ `decorator-support` is a file in the package that just exports the required preset and extra plugins.
 
-The `transform-react-jsx-source` is described as "Adds source file and line number to JSX elements".
--->
+^ The `transform-react-jsx-source` is described as "Adds source file and line number to JSX elements".
 
 ---
 
@@ -66,11 +63,9 @@ The `transform-react-jsx-source` is described as "Adds source file and line numb
 - Plugin
     - *Transform* & *Syntax*
 
-<!--
-Transform plugins can enable the required syntax plugins with the `inherits` in their definition.
+^ Transform plugins can enable the required syntax plugins with the `inherits` in their definition.
 
-https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin-handbook.md#-enabling-syntax-in-plugins
--->
+^ https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin-handbook.md#-enabling-syntax-in-plugins
 
 ---
 
@@ -120,9 +115,7 @@ https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin
 
 # Transformation
 
-<!--
-A Babel transformer will the traverse the AST, calling each method in the `visitor` object that is of a corresponding type.
--->
+^ A Babel transformer will the traverse the AST, calling each method in the `visitor` object that is of a corresponding type.
 
 - Input & output should be valid (Babylon-supported) JS ✅
     - tc39 stage features
@@ -137,12 +130,9 @@ A Babel transformer will the traverse the AST, calling each method in the `visit
 
 ### babel-plugin-transform-fun-chaos
 
-<!--
-If you're just about to quit your job, you should sneak this in.
+^ If you're just about to quit your job, you should sneak this in.
 
-Simply changes all of the pluses to minuses.
--->
-
+^ Simply changes all of the pluses to minuses.
 
 ```js
 module.exports = function({ types: t }) {
@@ -165,9 +155,7 @@ module.exports = function({ types: t }) {
 
 ### babel-plugin-transform-fun-chaos
 
-<!--
-And because these plugins are themselves JavaScript, we can execute code, such as randomly changing plusses to minuses.
--->
+^ And because these plugins are themselves JavaScript, we can execute code, such as randomly changing plusses to minuses.
 
 ```js
 module.exports = function({ types: t }) {
@@ -191,9 +179,7 @@ module.exports = function({ types: t }) {
 
 ### babel-plugin-transform-fun-chaos
 
-<!--
-Or changing them after 5 PM.
--->
+^ Or changing them after 5 PM.
 
 ```js
 module.exports = function({ types: t }) {
@@ -219,22 +205,17 @@ module.exports = function({ types: t }) {
 
 # Actual Example
 
-<!--
-NaN has some interesting properties, such as:
-
-NaN == NaN
-// false
-
-NaN === NaN
-// false
-
-Number.isNan(NaN)
-// true
-
-We can utilise this to create a Babel plugin which will automatically convert NaN equality checks to use the correct function.
--->
-
 ### `NaN`
+
+```js
+NaN == NaN        // false
+NaN === NaN       // false
+Number.isNan(NaN) // true
+```
+
+-
+
+We can write a plugin which automatically converts `NaN` equality checks to use the correct function
 
 ---
 
@@ -268,9 +249,7 @@ module.exports = function({ types: t }) {
 
 # Should anyone ever actually do this?
 
-<!--
-Whilst this was an interesting exercise, the real value of these plugins is that the Babel ecosystem can be extended as language features are added and evolve. Performing source code modifications such as above would be better handled by a linter.
--->
+^ Whilst this was an interesting exercise, the real value of these plugins is that the Babel ecosystem can be extended as language features are added and evolve. Performing source code modifications such as above would be better handled by a linter.
 
 # 🙈
 
