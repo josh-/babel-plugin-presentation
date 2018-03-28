@@ -1,0 +1,9 @@
+{
+  "name": "babel-plugin-transform-fun-chaos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": { },
+  "author": "Josh Parnham",
+  "license": "ISC"
+}
